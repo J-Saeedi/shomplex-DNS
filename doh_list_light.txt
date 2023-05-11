@@ -1,0 +1,5 @@
+https://res-acst3.absolight.net/dns-query
+https://tuandns.duckdns.org/dns-query
+https://ueni.dyndns.org/dns-query
+https://resolver3.absolight.net/dns-query
+https://adl.adfilter.net/dns-query
