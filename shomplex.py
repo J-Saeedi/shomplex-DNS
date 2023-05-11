@@ -2,7 +2,7 @@ import http.client
 from functools import partial
 import subprocess
 from time import sleep, time
-import wmi
+# import wmi
 
 from tqdm import tqdm
 
@@ -86,15 +86,15 @@ class GoodByeDPI:
         self.process.kill()
         self.process.wait()
 
-class WindowsInterface:
-    def __init__(self):
-        wmiService = wmi.WMI()
-        networkConfigs = wmiService.Win32_NetworkAdapterConfiguration(IPEnabled=True)
-        for i in networkConfigs:
-            print(i.Caption, i.IPAddress[0])
-        # Set the DNS server to 127.0.0.1 for the first network interface
-        # networkConfigs[0].SetDNSServerSearchOrder(['127.0.0.1'])
-    def tui_select_network(self): pass
+# class WindowsInterface:
+#     def __init__(self):
+#         wmiService = wmi.WMI()
+#         networkConfigs = wmiService.Win32_NetworkAdapterConfiguration(IPEnabled=True)
+#         for i in networkConfigs:
+#             print(i.Caption, i.IPAddress[0])
+#         # Set the DNS server to 127.0.0.1 for the first network interface
+#         # networkConfigs[0].SetDNSServerSearchOrder(['127.0.0.1'])
+#     def tui_select_network(self): pass
 
 class DNSProxy:
     def __init__(self, dns_url_list):
